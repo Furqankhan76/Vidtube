@@ -16,7 +16,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      lowecase: true,
+      lowercase: true,
       trim: true,
     },
     fullName: {
@@ -26,11 +26,18 @@ const userSchema = new Schema(
       index: true,
     },
     avatar: {
-      type: String, // cloudinary url
+      type: String, // Cloudinary URL for avatar
+      required: true,
+    },
+    avatarPublicId: {
+      type: String, // Cloudinary publicId for avatar
       required: true,
     },
     coverImage: {
-      type: String, // cloudinary url
+      type: String, // Cloudinary URL for cover image
+    },
+    coverImagePublicId: {
+      type: String, // Cloudinary publicId for cover image
     },
     watchHistory: [
       {

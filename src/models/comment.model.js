@@ -15,6 +15,12 @@ const commentSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "User",
     },
+    likes: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User", // IDs of users who liked the comment
+      },
+    ],
   },
   {
     timestamps: true,
